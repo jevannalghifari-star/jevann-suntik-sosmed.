@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JEVANN SUNTIK SOSMED</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#090514;color:white;font-family:Arial}
+header{text-align:center;padding:30px 15px;background:linear-gradient(135deg,#31005f,#8b20ff)}
+h1{margin:0;font-size:25px}
+main{padding:20px;max-width:500px;margin:auto}
+.card{background:#191027;padding:20px;border:1px solid #8739ff;border-radius:15px;margin:15px 0}
+button{background:#8b20ff;color:white;border:0;padding:13px;border-radius:10px;width:100%;font-weight:bold}
+input,select{width:100%;padding:13px;margin:8px 0;border-radius:8px;border:0}
+small{color:#c9b4e9}
+</style>
+</head>
+<body>
+<header>
+<h1>JEVANN SUNTIK SOSMED</h1>
+<p>Social Media Order Panel</p>
+</header>
+<main>
+<div class="card">
+<h3>Selamat Datang!</h3>
+<p>Panel demo pemesanan sosmed.</p>
+<small>Versi demo — belum terhubung ke layanan pengiriman.</small>
+</div>
+<div class="card">
+<h3>Buat Pesanan Demo</h3>
+<select id="service">
+<option>TikTok</option>
+<option>Instagram</option>
+<option>YouTube</option>
+<option>Pengikut Saluran WhatsApp</option>
+</select>
+<input id="link" placeholder="Masukkan link akun atau saluran">
+<input id="jumlah" type="number" placeholder="Jumlah">
+<button onclick="order()">BUAT PESANAN</button>
+<p id="hasil"></p>
+</div>
+</main>
+<script>
+function order(){
+let link=document.getElementById('link').value;
+let jumlah=document.getElementById('jumlah').value;
+let service=document.getElementById('service').value;
+if(!link||!jumlah||Number(jumlah)<1){
+alert('Isi link dan jumlah dengan benar');
+return;
+}
+document.getElementById('hasil').innerText=
+'Pesanan demo dibuat: '+service+' - '+jumlah;
+}
+</script>
+</body>
+</html>
